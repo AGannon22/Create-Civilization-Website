@@ -4,6 +4,19 @@
     padding: 0px;
     text-align: center;
 }
+@font-face {
+    font-family: 'Minecraft Italic';
+    src: url("assets\\MinecraftItalic-R8Mo.otf") format("opentype");
+}
+@font-face{
+    font-family: 'Minecraft';
+    src: url("assets\\MinecraftRegular-Bmg3.otf") format('opentype');
+}
+@font-face{
+    font-family: 'Minecraft';
+    font-weight: bold;
+    src: url('assets\\MinecraftBold-nMK1.otf') format('opentype');
+}
 header {
     background-color: rgb(44, 43, 43);
     text-align: center;
@@ -23,15 +36,15 @@ main {
 }
 h2 {
     font-size: 70px;
-    font-family: 'Pixelify Sans';
+    font-family: 'Minecraft Italic';
     padding-bottom: 10px;
 }
 h3 {
-    font-family: 'Pixelify Sans';
+    font-family: 'Minecraft';
     font-size: 25px;
 }
 p {
-    font-family: 'Pixelify Sans';
+    font-family: 'Minecraft';
 }
 nav {
     display:flex;
@@ -72,7 +85,7 @@ li a:hover{
     box-shadow:10px 15px 20px;
 }
 .centerMainText {
-    font-family: 'Pixelify Sans',sans-serif;
+    font-family: 'Minecraft';
     font-weight:200;
     font-size: 25px;
 }
@@ -100,7 +113,8 @@ li a:hover{
 footer {
     background-color: rgb(44, 43, 43);
     color: #726f6f;
-    font-family: 'Pixelify Sans';
+    font-family: 'Minecraft';
+    font-weight:bold;
     padding-right: 15px;
     text-align: end;
 }

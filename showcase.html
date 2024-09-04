@@ -67,7 +67,8 @@
                     const node = document.createElement("h3");
                     const textNode = document.createTextNode(obj.creationName + " created by " + obj.creator);
                     const dateNode = document.createElement("p");
-                    const date = document.createTextNode(obj.dateAdded);
+                    const newDate = new Date(obj.dateAdded * 1000);
+                    const date = document.createTextNode(newDate.toDateString());
                     const img = document.createElement("img");
                     img.src = obj.imgSRC;
                     dateNode.appendChild(date);
@@ -81,12 +82,12 @@
                     
                 });
             })
-            .catch(error => {
+            .catch(err => {
                 console.error('Error fetching or processing JSON:', error);
             });
     </script>
 </main>
 <footer>
-    v.0.06
+    v.0.07
 </footer>
 </html>
