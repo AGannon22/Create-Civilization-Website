@@ -1,0 +1,141 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+header {
+    background-color: rgb(44, 43, 43);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+main {
+    overflow-x:hidden;
+    margin-top:0px;
+    text-align:center;
+    background-image: url("assets/worldMap.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+h2 {
+    font-size: 70px;
+    font-family: 'Pixelify Sans';
+    padding-bottom: 10px;
+}
+h3 {
+    font-family: 'Pixelify Sans';
+    font-size: 25px;
+}
+p {
+    font-family: 'Pixelify Sans';
+}
+nav {
+    display:flex;
+    justify-content: center;
+}
+li {
+    display:inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+li a {
+    text-decoration: none;
+    color:#fff;
+    font-size: 20px;
+    font-family:'Montserrat';
+    font-weight: 200;
+    padding:1em;
+    
+}
+@keyframes headerAnimation{
+    from {font-weight:200;}
+    to {font-weight:600;}
+}
+
+li a:hover{
+    animation-name:headerAnimation;
+    animation-duration:2s;
+    animation-direction:alternate;
+    animation-iteration-count: infinite;
+}
+.centerSectionPlain {
+    margin: 20vw;
+    margin-top: 0px;
+    margin-bottom:25px;
+    padding:30px;
+    border-radius:15px;
+    background-image: linear-gradient(to bottom right, #dbd9d9, #fff,#dbd9d9);
+    box-shadow:10px 15px 20px;
+}
+.centerMainText {
+    font-family: 'Pixelify Sans',sans-serif;
+    font-weight:200;
+    font-size: 25px;
+}
+.grid-container {
+    display:grid;
+    grid-gap:vh;
+    grid-template-columns: auto auto auto;
+}
+.grid-item {
+    margin: 10vh;
+    margin-top: 0px;
+    margin-bottom:25px;
+    padding:15px;
+    border-radius:15px;
+    background-image: linear-gradient(to bottom right, #dbd9d9, #fff,#dbd9d9);
+    box-shadow:10px 15px 20px;
+
+}
+.grid-img {
+    width: 45vh;
+    height: 30vh;
+    border-radius: 15px;
+}
+
+footer {
+    background-color: rgb(44, 43, 43);
+    color: #726f6f;
+    font-family: 'Pixelify Sans';
+    padding-right: 15px;
+    text-align: end;
+}
+
+@media (max-width: 720px) {
+    main {
+        background-size: 150vw 200vh;
+        background-repeat: no-repeat;
+    }
+    .grid-container {
+        justify-content: center;
+        grid-template-columns: repeat(auto-fill, 70vh);
+    }
+    .grid-item {
+        padding: 10px;
+        margin-bottom: 15px;;
+    }
+    h2 {
+        font-size: 300%;
+    }
+    .centerMainText {
+        font-size:15px;
+    }
+    .centerSectionPlain {
+        margin: 10px;
+    }
+    .titleImage {
+        display: block; /* Ensures the image is treated as a block-level element */
+        margin-left: auto; /* Automatically adjusts left margin */
+        margin-right: auto; /* Automatically adjusts right margin */
+        width: 50vw; /* Existing width setting */
+        max-width:90vh;
+        height: auto;
+        display: flex; /* Ensures flex display for centering */
+        justify-content: center; /* Centers horizontally if using flex */
+        align-items: center; /* Centers vertically if using flex */
+      }
+  }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create: Civilization</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--font imports--> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "/style.css">
+
+</head>
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href = "index.html">HOME</a>
+            </li>
+            <li>
+                <a href = "showcase.html">SHOWCASE</a>
+            </li>
+            <li>
+                <a href = "https://discord.gg/JshdYZ2sPJ">
+                    DISCORD
+                </a>
+            </li>
+            <li>
+                <a href = "https://www.youtube.com/watch?v=LlG9yYW6Bi8">
+                    SERVER MAP
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <br>
+    <div class = "centerSectionPlain">
+        <h2>Showcase</h2>
+        <p class = "centerMainText">
+            Post your creations onto the discord and they may get published here!
+        </p>
+    </div>
+    <div class = "grid-container" id = "root">
+    </div>
+    <script>
+        // Fetch the JSON data
+        fetch('creations.json')
+            .then(response => response.json())
+            .then(showCaseCreations => {
+                console.log(showCaseCreations);
+                
+                // Loop through each creation object
+                showCaseCreations.forEach((creation) => {
+                    console.log(creation.creator);
+                });
+
+                // Get the grid container element
+                const app = document.getElementsByClassName('grid-container')[0];
+
+                // Create and append elements for each creation
+                showCaseCreations.forEach((obj) => {
+                    const mainNode = document.createElement("div");
+                    mainNode.classList.add("grid-item");
+                    const node = document.createElement("h3");
+                    const textNode = document.createTextNode(obj.creationName + " created by " + obj.creator);
+                    const dateNode = document.createElement("p");
+                    const date = document.createTextNode(obj.dateAdded);
+                    const img = document.createElement("img");
+                    img.src = obj.imgSRC;
+                    dateNode.appendChild(date);
+                    node.appendChild(textNode);
+                    mainNode.appendChild(img);
+                    img.classList.add("grid-img");
+                    mainNode.appendChild(node);
+                    mainNode.appendChild(dateNode);
+                    
+                    app.appendChild(mainNode);
+                    
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching or processing JSON:', error);
+            });
+    </script>
+</main>
+<footer>
+    v.0.04
+</footer>
+</html>
