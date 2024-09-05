@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel = "stylesheet" href = "/style.css">
     <script>
-        var currentVersion = 'v.0.09';
+        var currentVersion = 'v.0.1';
         window.onload = function(){
             document.getElementById('footer').innerHTML=currentVersion;
 };
@@ -56,15 +56,11 @@
             .then(response => response.json())
             .then(showCaseCreations => {
                 console.log(showCaseCreations);
-                
-                // Loop through each creation object
-                showCaseCreations.forEach((creation) => {
-                    console.log(creation.creator);
-                });
 
                 // Get the grid container element
                 const app = document.getElementsByClassName('grid-container')[0];
-
+                showCaseCreations.sort((a,b) => a.dateAdded - b.dateAdded);
+                showCaseCreations.reverse();
                 // Create and append elements for each creation
                 showCaseCreations.forEach((obj) => {
                     const mainNode = document.createElement("div");
