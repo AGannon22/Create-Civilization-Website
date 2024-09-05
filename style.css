@@ -110,6 +110,7 @@ li a:hover{
 }
 
 footer {
+    overflow: hidden;
     background-color: rgb(44, 43, 43);
     color: #726f6f;
     font-family: 'Minecraft';
