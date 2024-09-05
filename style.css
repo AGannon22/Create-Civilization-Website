@@ -30,7 +30,6 @@ main {
     text-align:center;
     background-image: url("assets/worldMap.jpg");
     background-size: cover;
-    background-attachment: fixed;
     background-repeat: no-repeat;
     justify-content: center;
 }
@@ -70,7 +69,7 @@ li a {
 }
 
 li a:hover{
-    animation-name:headerAnimation;
+    animation-name: headerAnimation;
     animation-duration:2s;
     animation-direction:alternate;
     animation-iteration-count: infinite;
@@ -121,7 +120,7 @@ footer {
 
 @media (max-width: 720px) {
     main {
-        background-size: 150vw 200vh;
+        background-size: cover;
         background-repeat: no-repeat;
     }
     .grid-container {
